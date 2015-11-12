@@ -1,0 +1,24 @@
+{
+  "name": "encode-for-mediasource",
+  "version": "1.0.0",
+  "description": "Encodes a video file so that it can be played as a MediaSource in the browser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jimkang/encode-for-mediasource.git"
+  },
+  "keywords": [],
+  "author": "Jim Kang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimkang/encode-for-mediasource/issues"
+  },
+  "homepage": "https://github.com/jimkang/encode-for-mediasource",
+  "devDependencies": {
+    "tape": "^3.0.3"
+  },
+  "dependencies": {}
+}
