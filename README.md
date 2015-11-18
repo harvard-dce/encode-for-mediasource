@@ -6,7 +6,7 @@ Encodes a video file so that it can be played as a MediaSource in the browser. I
 Installation
 ------------
 
-First, make sure you have `wget`. Then, clone this repo. Run:
+First, make sure you have `wget` and Homebrew. Then, clone this repo. Run:
 
     make install-mac
 

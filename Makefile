@@ -6,9 +6,7 @@ lib/Bento4-SDK-1-4-3-603.universal-apple-macosx:
 	unzip Bento4-SDK-1-4-3-603.universal-apple-macosx.zip
 
 lib/ffmpeg:
-	cd lib && \
-	wget http://ffmpegmac.net/resources/SnowLeopard_Lion_Mountain_Lion_Mavericks_Yosemite_El-Captain_27.10.2015.zip && \
-	unzip SnowLeopard_Lion_Mountain_Lion_Mavericks_Yosemite_El-Captain_27.10.2015.zip
+	brew install ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libquvi --with-libvorbis --with-libvpx --with-opus --with-x265
 
 install-mac: lib/Bento4-SDK-1-4-3-603.universal-apple-macosx lib/ffmpeg
 
@@ -16,14 +14,9 @@ encode:
 	ffmpeg \
 		-i $(src) \
 		-c:v libx264 \
-		-c:a libvo_aacenc \
+		-c:a libfdk_aac \
 		-profile:v baseline \
-		-level:v 3.0 \
-		-r 25 \
-		-keyint_min 250 \
-		-strict experimental \
-		-b:a 96k \
-		-movflags faststart \
+		-level 3.0 \
 		tmp/encoded.mp4 && \
 	$(BENTOPATH)/bin/mp4fragment tmp/encoded.mp4 $(dst) && \
 	rm tmp/encoded.mp4
